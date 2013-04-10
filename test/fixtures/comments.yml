@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  post_id: 1
+  name: MyString
+  body: MyText
+  approved: false
+
+two:
+  post_id: 1
+  name: MyString
+  body: MyText
+  approved: false
