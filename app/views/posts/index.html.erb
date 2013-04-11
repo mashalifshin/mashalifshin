@@ -1,0 +1,27 @@
+<% @posts.each do |post| %>
+
+	<div class="post">
+		<div class="title">
+			<%= post.title %>
+		</div>
+		<div class="timestamp">
+			<%= post.created_at %>
+		</div>
+		<div class="body">
+			<%= post.body %>
+		</div>
+		<div class="comment_form">
+			<%= form_for([post, @comment]) do |f| %>
+			 	<%= f.label :name, 'Your Name' %>:
+				<%= f.text_field :name %><br />
+				<%= f.label :body, 'Comment' %>:
+				<%= f.text_field :body %><br />
+				<%= f.submit %>
+			<% end %>
+			<span class="moderation_note">Comments are subject to moderator approval to screen spam, but are not otherwise censored or edited.<span>
+		</div>
+		<div class="comments_zippy">
+			<span class="comment_count"><%= post.comments.count %> comments on this post.</span>
+		<div>
+	</div>
+<% end %>
