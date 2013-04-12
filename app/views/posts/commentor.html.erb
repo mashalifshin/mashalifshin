@@ -1,0 +1,5 @@
+<% if comment.website.nil? %>
+	<%= get_commentor_name comment %>
+<% else %>
+	<%= link_to get_commentor_name comment, comment.website %>
+<% end %>

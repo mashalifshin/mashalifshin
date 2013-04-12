@@ -1,4 +1,4 @@
-class Posts < ActiveRecord::Base
+class Post < ActiveRecord::Base
   has_many :comments
 
   attr_accessible :body, :date, :title

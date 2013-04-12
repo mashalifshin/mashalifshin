@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+
+  time:
+      formats:
+          blog_post: "%A, %B %d, %Y at %l:%M PST"
+
+  date:
+      formats:
+          work: "%B %d, %Y"

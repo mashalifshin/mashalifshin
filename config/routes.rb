@@ -4,10 +4,12 @@ Mashalifshin::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :works, :only => [:index], :as => "/"
-  resources :posts, :only => [:index]
-  resources :comments, :only => [:new, :create]
+  resources :posts, :only => [:index] do
+    resources :comments, :only => [:create]
+  end
 
   match 'blog' => 'posts#index'
+
   root :to => 'works#index'
 
   # The priority is based upon order of creation:

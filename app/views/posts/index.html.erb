@@ -5,23 +5,39 @@
 			<%= post.title %>
 		</div>
 		<div class="timestamp">
-			<%= post.created_at %>
+			<%= l post.created_at.in_time_zone("Pacific Time (US & Canada)"), :format => :blog_post %>
 		</div>
 		<div class="body">
-			<%= post.body %>
+			<%= simple_format post.body %>
 		</div>
+
+		<% @comment.errors.full_messages.each do |msg| %>
+	      <div class="comment_form_error"><%= msg %></div>
+	    <% end %>
+
 		<div class="comment_form">
-			<%= form_for([post, @comment]) do |f| %>
-			 	<%= f.label :name, 'Your Name' %>:
+			<%= form_for [post, @comment] do |f| %>
+				<%= f.label :comment, 'Comment' %>:
+				<%= f.text_area :comment %><br />
+			 	<%= f.label :name, 'Name' %>:
 				<%= f.text_field :name %><br />
-				<%= f.label :body, 'Comment' %>:
-				<%= f.text_field :body %><br />
-				<%= f.submit %>
+			 	<%= f.label :website, 'Website' %>:
+				<%= f.text_field :website %><br />
+				<%= f.submit 'Make a comment' %>
 			<% end %>
-			<span class="moderation_note">Comments are subject to moderator approval to screen spam, but are not otherwise censored or edited.<span>
 		</div>
 		<div class="comments_zippy">
-			<span class="comment_count"><%= post.comments.count %> comments on this post.</span>
+			<span class="comment_count"><%= post.comments.chronological.count %> comments on this post.</span>
+			<% post.comments.chronological.each do |comment| %>
+				<dic class="comment">
+					<div class="name">
+						<%= render :partial => "commentor", :locals => { :comment => comment }%>
+					</div>
+					<div class="body">
+						<%= simple_format comment.body %>
+					</div>
+				</div>
+			<% end %>
 		<div>
 	</div>
 <% end %>
