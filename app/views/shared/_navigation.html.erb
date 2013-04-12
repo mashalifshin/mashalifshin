@@ -1,5 +1,5 @@
 <div class="top_navigation_bar">
 	<%= link_to "Masha Lifshin", root_url, :class => controller.class == WorksController ? "nav_link current" : "nav_link", :id => "my_name" %>
 	<%= link_to "Resume", @info.resume.url, :class => "nav_link" %>
-	<%= link_to "Blog", posts_path, :class => controller.class == PostsController ? "nav_link current" : "nav_link" %>
+	<%= link_to "Blog", blog_path, :class => controller.class == PostsController ? "nav_link current" : "nav_link" %>
 </div>
