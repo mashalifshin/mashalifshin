@@ -6,7 +6,7 @@ en:
 
   time:
       formats:
-          blog_post: "%A, %B %d, %Y at %l:%M PST"
+          blog_post: "%A, %B %d, %Y at %l:%M %P PST"
 
   date:
       formats:
