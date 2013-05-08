@@ -1,14 +1,17 @@
 class CommentsController < ApplicationController
   
   def create
-    @comment = Post.find(params[:post_id]).comments.build(params[:comment])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(params[:comment])
       if @comment.save
-        flash[:notice] = "Thank you for contributing your thoughts"
-        redirect_to posts_path()
+        redirect_to posts_path(:anchor => get_anchor_name(@post.title))
       else
-        flash[:error] = "There was a problem with your submission. Please correct the errors below and try again."
-        redirect_to posts_path(params)
+        redirect_to posts_path(params, :anchor => "#{get_anchor_name(@post.title)}_comment_form")
       end
   end
-  
+
+  def get_anchor_name title
+    title.gsub ' ', '_'
+  end
+
 end

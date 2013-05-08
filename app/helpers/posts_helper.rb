@@ -1,10 +1,12 @@
 module PostsHelper
 
   def get_commentor_name comment
-    if comment.name.nil?
+    if !comment.name?
       'Anonymous'
-    else
+    elsif !comment.website?
       comment.name
+    else
+      link_to comment.name, comment.website
     end
   end
 

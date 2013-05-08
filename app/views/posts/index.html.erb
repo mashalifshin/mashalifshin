@@ -31,10 +31,10 @@
 			<% post.comments.chronological.each do |comment| %>
 				<dic class="comment">
 					<div class="name">
-						<%= render :partial => "commentor", :locals => { :comment => comment }%>
+						<%= get_commentor_name comment %>
 					</div>
 					<div class="body">
-						<%= simple_format comment.body %>
+						<%= simple_format comment.comment %>
 					</div>
 				</div>
 			<% end %>
