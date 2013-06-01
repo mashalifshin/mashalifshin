@@ -1,3 +1,4 @@
+<%= render :partial => "years", :locals => { :year => @year, :all_years => @all_years } %>
 <% @posts.each do |post| %>
 
 	<div class="post">
@@ -17,17 +18,17 @@
 
 		<div class="comment_form">
 			<%= form_for [post, @comment] do |f| %>
-				<%= f.label :comment, 'Comment' %>:
+				<%= f.label :comment, 'Note' %>:
 				<%= f.text_area :comment %><br />
 			 	<%= f.label :name, 'Name' %>:
 				<%= f.text_field :name %><br />
 			 	<%= f.label :website, 'Website' %>:
 				<%= f.text_field :website %><br />
-				<%= f.submit 'Make a comment' %>
+				<%= f.submit 'Make a note' %>
 			<% end %>
 		</div>
 		<div class="comments_zippy">
-			<span class="comment_count"><%= post.comments.chronological.count %> comments on this post.</span>
+			<span class="comment_count"><%= post.comments.chronological.count %> notes on this post.</span>
 			<% post.comments.chronological.each do |comment| %>
 				<dic class="comment">
 					<div class="name">

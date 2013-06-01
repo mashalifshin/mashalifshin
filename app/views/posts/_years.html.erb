@@ -1,0 +1,10 @@
+<div class="current_year">
+	<%= @year %>
+</div>
+<div class="years">	
+	<% @all_years.each do |year| %>
+		<div class="year">
+			<% link_to year, posts_path(year) %>
+		</div>
+	<% end %>
+</div>
