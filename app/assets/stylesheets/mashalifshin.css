@@ -1,0 +1,52 @@
+#header_visual {
+	width:100%;
+	border-top: 1px solid Magenta;
+	border-bottom: 1px solid Magenta;
+	height: 200px;
+}
+
+.post {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 3em;
+}
+
+.post .title {
+	float: right;
+	width: 40%;
+	margin-right: 10%;
+}
+
+.post .metadata {
+	width: 40%;
+	float: right;
+}
+
+.post .comment_count {
+	display: inline-block;
+	width: 100%;
+}
+
+.post .timestamp {
+	display: inline-block;
+	width: 100%;
+}
+
+.post .body {
+	float: right;
+	width: 40%;
+	margin-right: 10%;
+}
+
+.post .comments_zippy {
+	display: none;
+}
+
+.post .comment_zippy .comment_form_error {
+	
+}
+
+.post .comment_zippy .comment_form {
+	
+}
+
