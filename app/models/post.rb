@@ -10,5 +10,5 @@ class Post < ActiveRecord::Base
   validates :title, :uniqueness => true
   validates :title, :body, :presence => true
 
-  scope :chronological, :order => "date DESC", :conditions => 'live IS TRUE'
+  scope :chronological, :order => "created_at ASC", :conditions => 'live IS TRUE'
 end
