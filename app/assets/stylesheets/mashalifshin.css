@@ -1,8 +1,56 @@
+body {
+	font-family: 'Iceland', sans-serif;
+}
+
+#top_navigation_bar {
+	display: inline-block;
+}
+
+.navigation_link {
+}
+
+#whats_my_name {
+	font-family: 'Montserrat Subrayada', sans-serif;
+	font-size: 3em;
+	float: left;
+}
+
+#whats_my_name a {
+	text-decoration: none;
+	color: #eee;
+}
+#whats_my_name a:link {
+
+}
+#whats_my_name a:visited {
+
+}
+#whats_my_name a:hover {
+
+}
+#whats_my_name a:active {
+
+}
+
+#about_link {
+	position: absolute;
+	right: 0px;
+	padding-top: 1.5em;
+	font-size: 1em;
+	width: 40%;
+	border-bottom: 1px solid Magenta;
+	text-align: right;
+}
+
+#about_link a {
+	text-decoration: none;
+}
+
 #header_visual {
 	width:100%;
-	border-top: 1px solid Magenta;
-	border-bottom: 1px solid Magenta;
 	height: 200px;
+	background-color: #ddd;
+	margin-bottom: 1em;
 }
 
 .post {
@@ -14,7 +62,9 @@
 .post .title {
 	float: right;
 	width: 40%;
-	margin-right: 10%;
+	margin-right: 15%;
+	font-size: 1.3em;
+	color: #333;
 }
 
 .post .metadata {
@@ -24,18 +74,33 @@
 
 .post .comment_count {
 	display: inline-block;
-	width: 100%;
+	width: 40%;
+	color: #333;
+	float: right;
+	margin-right: 15%;
+	margin-top: 2em;
 }
 
 .post .timestamp {
 	display: inline-block;
 	width: 100%;
+	border-bottom: 1px solid Magenta;
+	color: #333;
 }
 
 .post .body {
 	float: right;
 	width: 40%;
-	margin-right: 10%;
+	margin-right: 15%;
+	font-family: Courier;
+	font-size: .8em;
+}
+
+.post .body p {
+	letter-spacing: .1em;
+	margin-top: .5em;
+	line-height: 1.5em;
+	color: #555;
 }
 
 .post .comments_zippy {
@@ -48,5 +113,20 @@
 
 .post .comment_zippy .comment_form {
 	
+}
+
+#about_me {
+	float: right;
+	width: 40%;
+	margin-right: 15%;
+	font-family: Courier;
+	font-size: .8em;
+}
+
+#about_me p {
+	letter-spacing: .1em;
+	margin-top: .5em;
+	line-height: 1.5em;
+	color: #555;
 }
 
