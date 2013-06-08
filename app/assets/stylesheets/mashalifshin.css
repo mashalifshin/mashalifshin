@@ -103,6 +103,18 @@ body {
 	color: #555;
 }
 
+.captioned_image {
+	margin-bottom: 1em;
+}
+
+.image_caption .name {
+	font-style: italic;
+}
+
+.image_caption .info {
+	color: #aaa;
+}
+
 .post .comments_zippy {
 	display: none;
 }

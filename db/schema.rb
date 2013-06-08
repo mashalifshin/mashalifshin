@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601020609) do
+ActiveRecord::Schema.define(:version => 20130608002953) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(:version => 20130601020609) do
     t.datetime "updated_at",  :null => false
     t.integer  "image_order"
     t.string   "name"
+    t.date     "date"
+    t.string   "author"
+    t.text     "info"
   end
 
   create_table "posts", :force => true do |t|
@@ -44,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20130601020609) do
     t.text     "body"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
-    t.date     "date"
     t.boolean  "live",       :default => false
   end
 

@@ -14,7 +14,12 @@
 		</div>
 
 		<div class="body">
+			<%= render  :partial => 'shared/captioned_image',
+						:locals => {:the_image => post.post_images.ordered.first } unless post.post_images.empty? %>
 			<%= simple_format post.body %>
+			<% post.post_images.ordered.drop(1).each do |post_image| %>
+				<%= render :partial => "shared/captioned_image", :locals => { :the_image => post_image } %>
+			<% end %>
 		</div>
 
 		<div class="comment_count"><%= post.comments.chronological.count %> comments.</div>

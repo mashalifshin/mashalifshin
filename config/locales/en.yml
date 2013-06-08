@@ -10,4 +10,4 @@ en:
 
   date:
       formats:
-          work: "%B %d, %Y"
+          image: "%B %Y"
