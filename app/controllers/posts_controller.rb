@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.chronological
+    @posts = Post.chronological.page params[:page]
 
     if params[:comment].nil?
       @comment = Comment.new

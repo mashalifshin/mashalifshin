@@ -115,6 +115,18 @@ body {
 	color: #aaa;
 }
 
+.pagination_info {
+	width: 55%;
+	float: right;
+	margin-bottom: 10%;
+	margin-right: 5%;
+	border-top: 1px solid Magenta;
+}
+
+.pagination_links {
+	float: right;
+}
+
 .post .comments_zippy {
 	display: none;
 }

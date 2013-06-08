@@ -30,6 +30,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'asset_sync'
 
+gem 'kaminari'
+
 group :production do
   gem 'puma'
   gem 'newrelic_rpm'

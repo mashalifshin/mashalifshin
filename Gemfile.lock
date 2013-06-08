@@ -190,6 +190,7 @@ DEPENDENCIES
   devise
   fog
   jquery-rails
+  kaminari
   mini_magick
   newrelic_rpm
   pg
