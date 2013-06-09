@@ -1,0 +1,30 @@
+<div class="comment_count"><%= post.comments.chronological.count %> comments.</div>
+
+<div class="comments_zippy">
+	<% @comment.errors.full_messages.each do |msg| %>
+      <div class="comment_form_error"><%= msg %></div>
+    <% end %>
+
+	<div class="comment_form">
+		<%= form_for [post, @comment] do |f| %>
+			<%= f.label :comment, 'Comment' %>
+			<%= f.text_area :comment %><br />
+		 	<%= f.label :name, 'Name' %>
+			<%= f.text_field :name %><br />
+		 	<%= f.label :website, 'Website' %>
+			<%= f.text_field :website %><br />
+			<%= f.submit 'Comment' %>
+		<% end %>
+	</div>
+
+	<% post.comments.chronological.each do |comment| %>
+		<div class="comment">
+			<div class="name">
+				<%= get_commentor_name comment %>
+			</div>
+			<div class="body">
+				<%= simple_format comment.comment %>
+			</div>
+		</div>
+	<% end %>
+</div>

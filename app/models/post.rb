@@ -14,4 +14,9 @@ class Post < ActiveRecord::Base
   scope :chronological, :order => "created_at ASC", :conditions => 'live IS TRUE'
 
   paginates_per 5
+
+  def self.find_by_param input
+      find_by_title input.gsub '_', ' '
+  end
+
 end

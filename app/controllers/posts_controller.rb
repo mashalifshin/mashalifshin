@@ -16,4 +16,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find_by_param params[:title]
+
+    if params[:comment].nil?
+      @comment = Comment.new
+    else
+      @comment = Post.find(params[:post_id]).comments.build(params[:comment])
+      @comment.save
+    end
+  end
 end

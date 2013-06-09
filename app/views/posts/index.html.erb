@@ -1,62 +1,8 @@
-<% @posts.each do |post| %>
-
-	<div class="post">
-		<div class="title">
-			<%= post.title %>
-		</div>
-
-		<div class="metadata">
-			<div class="timestamp">
-				<%= l post.created_at.in_time_zone("Pacific Time (US & Canada)"), :format => :blog_post %>
-			</div>
-			<div class="tags">
-				<% post.tags.each do |tag| %>
-					<span class="tag"><%= link_to tag.name, tagged_posts_url(:tag => tag.name) %></span>
-				<% end %>
-			</div>
-		</div>
-
-		<div class="body">
-			<%= render  :partial => 'shared/captioned_image',
-						:locals => {:the_image => post.post_images.ordered.first } unless post.post_images.empty? %>
-			<%= simple_format post.body %>
-			<% post.post_images.ordered.drop(1).each do |post_image| %>
-				<%= render :partial => "shared/captioned_image", :locals => { :the_image => post_image } %>
-			<% end %>
-		</div>
-
-		<div class="comment_count"><%= post.comments.chronological.count %> comments.</div>
-
-		<div class="comments_zippy">
-			<% @comment.errors.full_messages.each do |msg| %>
-		      <div class="comment_form_error"><%= msg %></div>
-		    <% end %>
-
-			<div class="comment_form">
-				<%= form_for [post, @comment] do |f| %>
-					<%= f.label :comment, 'Comment' %>:
-					<%= f.text_area :comment %><br />
-				 	<%= f.label :name, 'Name' %>:
-					<%= f.text_field :name %><br />
-				 	<%= f.label :website, 'Website' %>:
-					<%= f.text_field :website %><br />
-					<%= f.submit 'Make a comment' %>
-				<% end %>
-			</div>
-
-			<% post.comments.chronological.each do |comment| %>
-				<div class="comment">
-					<div class="name">
-						<%= get_commentor_name comment %>
-					</div>
-					<div class="body">
-						<%= simple_format comment.comment %>
-					</div>
-				</div>
-			<% end %>
-		</div>
-	</div>
-<% end %>
+<div class="posts">
+	<% @posts.each do |post| %>
+		<%= render :partial => 'post', :locals => {:post => post} %>
+	<% end %>
+</div>
 
 <div class="pagination_info">
 	<%= page_entries_info @posts, :entry_name => "entry" %>

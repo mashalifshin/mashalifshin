@@ -1,0 +1,27 @@
+<div class="post">
+	<div class="title">
+		<%= link_to post.title, post %>
+	</div>
+
+	<div class="metadata">
+		<div class="timestamp">
+			<%= l post.created_at.in_time_zone("Pacific Time (US & Canada)"), :format => :blog_post %>
+		</div>
+		<div class="tags">
+			<% post.tags.each do |tag| %>
+				<span class="tag"><%= link_to tag.name, tagged_posts_url(:tag => tag.name) %></span>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="body">
+		<%= render  :partial => 'shared/captioned_image',
+					:locals => {:the_image => post.post_images.ordered.first } unless post.post_images.empty? %>
+		<%= simple_format post.body %>
+		<% post.post_images.ordered.drop(1).each do |post_image| %>
+			<%= render :partial => "shared/captioned_image", :locals => { :the_image => post_image } %>
+		<% end %>
+	</div>
+
+	<%= render :partial => 'comments', :locals => {:post => post} %>
+</div>
