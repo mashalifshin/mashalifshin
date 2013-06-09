@@ -12,5 +12,13 @@ class Tag < ActiveRecord::Base
       inverse_of :tags
     end
   end  
-  
+
+  def to_param
+    title.gsub ' ', '_'
+  end
+
+  def self.find_by_param input
+      find_by_name input.gsub '_', ' '
+  end
+
 end

@@ -2,6 +2,19 @@ body {
 	font-family: 'Iceland', sans-serif;
 }
 
+a {
+	text-decoration: none;
+}
+a:link {
+	color: rgb(14,157,238);
+}
+a:visited {}
+a:hover {}
+a:active{
+	color: rgb(238,86,14);
+}
+
+
 #top_navigation_bar {
 	display: inline-block;
 }
@@ -16,7 +29,6 @@ body {
 }
 
 #whats_my_name a {
-	text-decoration: none;
 	color: #eee;
 }
 #whats_my_name a:link {
@@ -43,7 +55,6 @@ body {
 }
 
 #about_link a {
-	text-decoration: none;
 }
 
 #header_visual {
@@ -72,13 +83,24 @@ body {
 	float: right;
 }
 
-.post .comment_count {
-	display: inline-block;
-	width: 40%;
-	color: #333;
-	float: right;
-	margin-right: 15%;
-	margin-top: 2em;
+.post .tags {
+	margin-top: .1em;
+	height: 0px;
+}
+
+.post .tags .tag {
+}
+
+.tag a {
+	background-color: rgb(255,222,255);
+}
+.tag a:link {
+}
+.tag a:visited {}
+.tag a:hover {
+	background-color: rgb(255,182,255);
+}
+.tag a:active{
 }
 
 .post .timestamp {
@@ -113,6 +135,15 @@ body {
 
 .image_caption .info {
 	color: #aaa;
+}
+
+.post .comment_count {
+	display: inline-block;
+	width: 40%;
+	color: #333;
+	float: right;
+	margin-right: 15%;
+	margin-top: 2em;
 }
 
 .pagination_info {
@@ -153,4 +184,3 @@ body {
 	line-height: 1.5em;
 	color: #555;
 }
-

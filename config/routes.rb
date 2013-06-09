@@ -6,6 +6,8 @@ Mashalifshin::Application.routes.draw do
   resources :posts, :only => [:index] do
     resources :comments, :only => [:create]
   end
+  match 'tags/:tag_name' => 'posts#index', :as => 'tag'
+
   resources :about, :only => [:index]
 
   root :to => 'posts#index'
