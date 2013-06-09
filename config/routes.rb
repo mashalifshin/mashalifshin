@@ -4,9 +4,10 @@ Mashalifshin::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :posts, :only => [:index] do
+    get ':tag', :action => :index, :on => :collection, :as => 'tagged'
+    get '(:tag)/page/:page', :action => :index, :on => :collection
     resources :comments, :only => [:create]
   end
-  match 'tags/:tag_name' => 'posts#index', :as => 'tag'
 
   resources :about, :only => [:index]
 

@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
 
   def index
-    if params[:tag_name].nil?
+    if params[:tag].nil?
       @posts = Post.chronological.page params[:page]
     else
-      @tag = Tag.find_by_param params[:tag_name]
+      @tag = Tag.find_by_param params[:tag]
       @posts = @tag.posts.chronological.page params[:page]
     end
 
