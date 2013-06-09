@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608002953) do
+ActiveRecord::Schema.define(:version => 20130609014647) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -50,6 +50,11 @@ ActiveRecord::Schema.define(:version => 20130608002953) do
     t.boolean  "live",       :default => false
   end
 
+  create_table "posts_tags", :id => false, :force => true do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+  end
+
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
@@ -62,6 +67,10 @@ ActiveRecord::Schema.define(:version => 20130608002953) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
