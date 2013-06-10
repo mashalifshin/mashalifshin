@@ -137,13 +137,42 @@ a:active{
 	color: #aaa;
 }
 
-.post .comment_count {
+.post .comment_count,
+.post .comments_zippy {
 	display: inline-block;
 	width: 40%;
 	color: #333;
 	float: right;
 	margin-right: 15%;
 	margin-top: 2em;
+}
+
+.posts .comments_zippy {
+	display: none;
+}
+
+.post .comments_zippy .comment_form_error {
+}
+.post .comments_zippy .comment_form form {
+}
+
+.post .comments_zippy .comment_form label,
+.post .comments_zippy .comment_form textarea,
+.post .comments_zippy .comment_form input {
+	width: 60%;
+	display: inline-block;
+}
+.post .comments_zippy .comment_form input[type="submit"] {
+	width: 20%;
+	margin-left: 40%;
+	border: none;
+	font-family: Iceland;
+	font-size: 1em;
+	background-color: #eee;
+	color: #555;
+}
+.post .comments_zippy .comment_form input[type="submit"]:hover {
+	background-color: #ddd;
 }
 
 .pagination_info {
@@ -158,17 +187,6 @@ a:active{
 	float: right;
 }
 
-.post .comments_zippy {
-	display: none;
-}
-
-.post .comment_zippy .comment_form_error {
-	
-}
-
-.post .comment_zippy .comment_form {
-	
-}
 
 #about_me {
 	float: right;
