@@ -1,0 +1,7 @@
+<div class="pagination_info">
+	<%= page_entries_info @posts, :entry_name => "entry" %>
+	<span class="pagination_links">
+		<%= link_to_previous_page @posts, 'previous', :params => {:tag => params[:tag]} %>
+		<%= link_to_next_page @posts, 'next', :params => {:tag => params[:tag]} %>
+	</span>
+</div>
