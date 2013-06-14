@@ -3,14 +3,14 @@ Mashalifshin::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+  resources :about, :only => [:index]
+
   resources :posts, :only => [:index, :show] do
     get ':tag', :action => :index, :on => :collection, :as => 'tagged'
     get '(:tag)/page/:page', :action => :index, :on => :collection
     resources :comments, :only => [:create]
   end
   get ':title' => "posts#show", :as => 'post'
-
-  resources :about, :only => [:index]
 
   root :to => 'posts#index'
 
