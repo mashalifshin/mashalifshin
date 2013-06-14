@@ -7,7 +7,7 @@
 
 	<div class="comment_form">
 		<%= form_for [post, @comment] do |f| %>
-			<%= f.label :comment, 'Comment' %>
+			<%= f.label :comment, 'Make a comment' %>
 			<%= f.text_area :comment %><br />
 		 	<%= f.label :name, 'Name' %>
 			<%= f.text_field :name %><br />
@@ -19,10 +19,10 @@
 
 	<% post.comments.chronological.each do |comment| %>
 		<div class="comment">
-			<div class="name">
+			<div class="commentor">
 				<%= get_commentor_name comment %>
 			</div>
-			<div class="body">
+			<div class="comment_text">
 				<%= simple_format comment.comment %>
 			</div>
 		</div>

@@ -175,6 +175,10 @@ a:active{
 	background-color: #ddd;
 }
 
+.comment {
+	margin-top: 2em;
+}
+
 .pagination_info {
 	width: 55%;
 	float: right;
