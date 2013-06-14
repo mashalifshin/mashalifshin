@@ -15,6 +15,10 @@ class Post < ActiveRecord::Base
 
   paginates_per 5
 
+  def to_param
+    title.gsub ' ', '_'
+  end
+
   def self.find_by_param input
       find_by_title input.gsub '_', ' '
   end
