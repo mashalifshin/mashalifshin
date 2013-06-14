@@ -1,4 +1,4 @@
-<div class="comment_count"><%= post.comments.chronological.count %> comments.</div>
+<div class="comment_count"><%= pluralize post.comments.chronological.count, 'comment' %>.</div>
 
 <div class="comments_zippy">
 	<% @comment.errors.full_messages.each do |msg| %>
