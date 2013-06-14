@@ -18,6 +18,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_param params[:title]
+    @previous_post = @post.previous_chronologically
+    @next_post = @post.next_chronologically
 
     if params[:comment].nil?
       @comment = Comment.new

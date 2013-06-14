@@ -1,1 +1,8 @@
 <%= render :partial => 'post', :locals => {:post => @post} %>
+
+<div class="pagination_info">
+	<span class="pagination_links">
+		<%= link_to 'previous', @previous_post unless @previous_post.nil? %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to 'next', @next_post unless @next_post.nil? %>
+	</span>
+</div>

@@ -15,6 +15,16 @@ class Post < ActiveRecord::Base
 
   paginates_per 5
 
+  def next_chronologically
+    index = Post.chronological.index self
+    Post.chronological[index+1]
+  end
+
+  def previous_chronologically
+    index = Post.chronological.index self
+    Post.chronological[index-1]
+  end
+
   def to_param
     title.gsub ' ', '_'
   end
