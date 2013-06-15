@@ -191,7 +191,6 @@ a:active{
 	float: right;
 }
 
-
 #about_me {
 	float: right;
 	width: 40%;
@@ -204,5 +203,45 @@ a:active{
 	letter-spacing: .1em;
 	margin-top: .5em;
 	line-height: 1.5em;
+	color: #555;
+}
+
+.devise {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 3em;
+}
+
+.devise h2 {
+	float: right;
+	width: 40%;
+	margin-right: 15%;
+	font-size: 1.3em;
+}
+
+.devise .pretty_pink_line {
+	float: right;
+	width: 40%;
+	border-bottom: 1px solid Magenta;
+	height: 1em;
+}
+
+.devise form,
+.devise a {
+	float: right;
+	width: 40%;
+	margin-right: 15%;
+}
+
+.devise form div {
+	margin-top: .5em;
+}
+
+.devise input[type='submit'] {
+	width: 20%;
+	border: none;
+	font-family: Iceland;
+	font-size: 1em;
+	background-color: #eee;
 	color: #555;
 }
