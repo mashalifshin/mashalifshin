@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
   validates :title, :uniqueness => true
   validates :title, :body, :presence => true
 
-  scope :chronological, :order => "created_at ASC", :conditions => 'live IS TRUE'
+  scope :chronological, :order => "created_at DESC", :conditions => 'live IS TRUE'
 
   paginates_per 5
 

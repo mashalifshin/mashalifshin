@@ -5,6 +5,9 @@
 	<div id="about_link" class="navigation_link">
 		<%= link_to "about me", about_index_path, :class => controller.class == AboutController ? "nav_link current" : "nav_link" %>
 	</div>
+	<div id="rss_link" class="navigation_link">
+		<%= link_to "rss", feed_posts_url %>
+	</div>
 </div>
 
 <div id="header_visual">
