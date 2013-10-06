@@ -1,6 +1,17 @@
-<div class="comment_count"><%= pluralize post.comments.chronological.count, 'comment' %>.</div>
+<div class="comment_count">->&nbsp;&nbsp;&nbsp;<%= pluralize post.comments.chronological.count, 'comment' %>.&nbsp;&nbsp;&nbsp;Contribute a comment.</div>
 
 <div class="comments_zippy">
+	<% post.comments.chronological.each do |comment| %>
+		<div class="comment">
+			<div class="commentor">
+				<%= get_commentor_name comment %>
+			</div>
+			<div class="comment_text">
+				<%= simple_format comment.comment %>
+			</div>
+		</div>
+	<% end %>
+
 	<% @comment.errors.full_messages.each do |msg| %>
       <div class="comment_form_error"><%= msg %></div>
     <% end %>
@@ -17,14 +28,4 @@
 		<% end %>
 	</div>
 
-	<% post.comments.chronological.each do |comment| %>
-		<div class="comment">
-			<div class="commentor">
-				<%= get_commentor_name comment %>
-			</div>
-			<div class="comment_text">
-				<%= simple_format comment.comment %>
-			</div>
-		</div>
-	<% end %>
 </div>

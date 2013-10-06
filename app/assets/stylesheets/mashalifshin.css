@@ -1,5 +1,5 @@
 body {
-	font-family: 'Iceland', sans-serif;
+	font-family: 'Iceland', 'Courier', sans-serif;
 }
 
 a {
@@ -23,7 +23,7 @@ a:active{
 }
 
 #whats_my_name {
-	font-family: 'Montserrat Subrayada', sans-serif;
+	font-family: 'Montserrat Subrayada', Courier, sans-serif;
 	font-size: 3em;
 	float: left;
 }
@@ -142,23 +142,29 @@ a:active{
 	color: #aaa;
 }
 
+.comment_count {
+	color: rgb(14,157,238);
+}
+
+.comment_count:hover {
+	cursor: pointer;
+}
+
 .post .comment_count,
 .post .comments_zippy {
 	display: inline-block;
 	width: 40%;
-	color: #333;
 	float: right;
 	margin-right: 15%;
-	margin-top: 2em;
 }
 
 .posts .comments_zippy {
-	display: none;
 }
 
 .post .comments_zippy .comment_form_error {
 }
 .post .comments_zippy .comment_form form {
+	border-top: 1px solid Magenta;
 }
 
 .post .comments_zippy .comment_form label,
@@ -171,7 +177,7 @@ a:active{
 	width: 20%;
 	margin-left: 40%;
 	border: none;
-	font-family: Iceland;
+	font-family: Iceland, Courier, sans-serif;
 	font-size: 1em;
 	background-color: #eee;
 	color: #555;
@@ -181,7 +187,8 @@ a:active{
 }
 
 .comment {
-	margin-top: 2em;
+	padding-bottom: 2em;
+	border-top: 1px solid Magenta;
 }
 
 .pagination_info {
@@ -245,7 +252,7 @@ a:active{
 .devise input[type='submit'] {
 	width: 20%;
 	border: none;
-	font-family: Iceland;
+	font-family: Iceland, Courier, sans-serif;
 	font-size: 1em;
 	background-color: #eee;
 	color: #555;
