@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     if params[:comment].nil?
       @comment = Comment.new
     else
-      @comment = Post.find(params[:post_id]).comments.build(params[:comment])
+      @comment = Post.find_by_param(params[:post_id]).comments.build(params[:comment])
       @comment.save
     end
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     if params[:comment].nil?
       @comment = Comment.new
     else
-      @comment = Post.find(params[:post_id]).comments.build(params[:comment])
+      @comment = Post.find_by_param(params[:post_id]).comments.build(params[:comment])
       @comment.save
     end
   end
