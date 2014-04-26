@@ -1,65 +1,34 @@
 body {
-	font-family: 'Iceland', 'Courier', sans-serif;
+	font-family: 'Courier', sans-serif;
 }
 
 a {
 	text-decoration: none;
+	background-color: rgb(255,222,255);
 }
 a:link {
 	color: rgb(14,157,238);
 }
 a:visited {}
-a:hover {}
+a:hover {
+	background-color: rgb(255,182,255);
+}
 a:active{
 	color: rgb(238,86,14);
 }
 
+.nav_links {
+	right: 0px;
+	top: 0px;
+	position: absolute;
+}
 
-#top_navigation_bar {
+.nav_link {
 	display: inline-block;
 }
 
-.navigation_link {
-}
-
-#whats_my_name {
-	font-family: 'Montserrat Subrayada', Courier, sans-serif;
-	font-size: 3em;
-	float: left;
-}
-
-#whats_my_name a {
-	color: #eee;
-}
-#whats_my_name a:link {
-
-}
-#whats_my_name a:visited {
-
-}
-#whats_my_name a:hover {
-
-}
-#whats_my_name a:active {
-
-}
-
-.right_side_links {
-	position: absolute;
-	right: 0px;
-	padding-top: 1.5em;
-	font-size: 1em;
-	width: 40%;
-	border-bottom: 1px solid Magenta;
-	text-align: right;
-}
-
-#about_link, #rss_link {
-	float: right;
-	padding-left: 1.5em;
-}
-
-#about_link a {
+.nav_link_current a {
+	text-decoration: none;
 }
 
 #header_visual {
@@ -67,25 +36,18 @@ a:active{
 	height: 200px;
 	background-color: #ddd;
 	margin-bottom: 1em;
+	margin-top: 1em;
 }
 
 .post {
-	display: inline-block;
-	width: 100%;
 	margin-bottom: 3em;
 }
 
 .post .title {
-	float: right;
-	width: 40%;
-	margin-right: 15%;
-	font-size: 1.3em;
 	color: #333;
 }
 
 .post .metadata {
-	width: 40%;
-	float: right;
 }
 
 .post .tags {
@@ -142,55 +104,6 @@ a:active{
 	color: #aaa;
 }
 
-.comment_count {
-	color: rgb(14,157,238);
-}
-
-.comment_count:hover {
-	cursor: pointer;
-}
-
-.post .comment_count,
-.post .comments_zippy {
-	display: inline-block;
-	width: 40%;
-	float: right;
-	margin-right: 15%;
-}
-
-.posts .comments_zippy {
-}
-
-.post .comments_zippy .comment_form_error {
-}
-.post .comments_zippy .comment_form form {
-	border-top: 1px solid Magenta;
-}
-
-.post .comments_zippy .comment_form label,
-.post .comments_zippy .comment_form textarea,
-.post .comments_zippy .comment_form input {
-	width: 60%;
-	display: inline-block;
-}
-.post .comments_zippy .comment_form input[type="submit"] {
-	width: 20%;
-	margin-left: 40%;
-	border: none;
-	font-family: Iceland, Courier, sans-serif;
-	font-size: 1em;
-	background-color: #eee;
-	color: #555;
-}
-.post .comments_zippy .comment_form input[type="submit"]:hover {
-	background-color: #ddd;
-}
-
-.comment {
-	padding-bottom: 2em;
-	border-top: 1px solid Magenta;
-}
-
 .pagination_info {
 	width: 55%;
 	float: right;
@@ -203,7 +116,7 @@ a:active{
 	float: right;
 }
 
-#about_me {
+#about {
 	float: right;
 	width: 40%;
 	margin-right: 15%;
@@ -211,7 +124,7 @@ a:active{
 	font-size: .8em;
 }
 
-#about_me p {
+#about p {
 	letter-spacing: .1em;
 	margin-top: .5em;
 	line-height: 1.5em;

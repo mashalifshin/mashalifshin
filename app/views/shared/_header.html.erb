@@ -1,14 +1,12 @@
-<div id="top_navigation_bar">
-	<div id="whats_my_name" class="navigation_link">
-		<%= link_to "masha lifshin", root_url, :class => controller.class == PostsController ? "nav_link current" : "nav_link", :id => "my_name" %>
+<div class="nav_links">
+	<div class="nav_link">
+		<%= link_to "home", root_url, :class => controller.class == PostsController ? "nav_link_current" : "nav_link" %>
 	</div>
-	<div class="right_side_links">
-		<div id="rss_link" class="navigation_link">
-			<%= link_to "rss", feed_posts_url %>
-		</div>
-		<div id="about_link" class="navigation_link">
-			<%= link_to "about me", about_index_path, :class => controller.class == AboutController ? "nav_link current" : "nav_link" %>
-		</div>
+	<div class="nav_link">
+		<%= link_to "rss", feed_posts_url %>
+	</div>
+	<div class="nav_link">
+		<%= link_to "about", about_index_path, :class => controller.class == AboutController ? "nav_link_current" : "nav_link" %>
 	</div>
 </div>
 
