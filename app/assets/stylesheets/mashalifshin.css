@@ -35,25 +35,39 @@ a:active{
 	width:100%;
 	height: 200px;
 	margin-bottom: 1em;
-	margin-top: 1em;
 	overflow: hidden;
 }
 
 .post {
 	margin-bottom: 3em;
+	display: inline-block;
+	width: 100%;
 }
 
 .post .title {
 	color: #333;
+	float: right;
+	width: 40%;
+	margin-right: 15%;
+	font-size: 1.3em;
 }
 
 .post .metadata {
+	width: 40%;
+	float: right;
+}
+
+.post .timestamp {
+	display: inline-block;
+	width: 100%;
+	color: #333;
 }
 
 .post .tags {
 	margin-top: .1em;
 	height: 0px;
 }
+
 
 .post .tags .tag {
 }
@@ -68,13 +82,6 @@ a:active{
 	background-color: rgb(255,182,255);
 }
 .tag a:active{
-}
-
-.post .timestamp {
-	display: inline-block;
-	width: 100%;
-	border-bottom: 1px solid Magenta;
-	color: #333;
 }
 
 .post .body {
