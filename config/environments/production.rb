@@ -1,8 +1,14 @@
 Mashalifshin::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
   # Configure the mailer
-  config.action_mailer.default_url_options = { :host => 'http://desolate-retreat-1605.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'desolate-retreat-1605.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
   
   # Code is not reloaded between requests
   config.cache_classes = true
