@@ -1,0 +1,32 @@
+body {
+  padding:0; 
+  margin:0;
+}
+
+div#owlContainer {
+  margin:auto; 
+  width:360px; 
+  height:710px; 
+  display:none;
+  line-height: 0px;
+}
+
+div#loadingArea {
+  text-align:center; 
+  font-family:Verdana; 
+  font-size:2em; 
+  color:#663333;
+}
+
+div#progressBarFrame {
+  border:1px solid #663333;
+  width:256px;
+  height:10px;
+  margin:auto;
+}
+
+div#progressBar {
+  background-color:#cc9900;
+  height:10px;
+  width:0px;
+}
