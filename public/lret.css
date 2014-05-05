@@ -1,0 +1,13 @@
+
+div#phrase {
+  padding-top:100px;
+  height:225px;
+  width:600px;
+  margin:auto;
+}
+
+div#adjectiveOne, #adjectiveTwo, #noun {
+  height:75px;
+  background-repeat:no-repeat;
+  margin:auto;
+}

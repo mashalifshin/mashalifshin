@@ -1,0 +1,103 @@
+.text {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	font-size: 2em;
+	font-weight:bold;
+	padding: 5px;
+	text-align:center;
+}
+
+#first_title_text {
+	margin-top: .5%;
+	background-image: url('images/text_brown_bg.png');
+	background-position:center top;
+	display:inline-block;
+}
+
+#second_title_text {
+	margin-top: .5%;
+	background-image: url('images/text_blue_bg.png');
+	background-position:center top;
+	display:inline-block;	
+}
+
+#tabs {
+	position:absolute;
+	top:13%;
+	left:5%;
+}
+
+#tab_one, #tab_two, #tab_three {
+	background-image: url('images/text_blue_bg.png');
+	background-position: center top;
+	display: inline-block;
+	font-size: 1em;
+	margin-left: 10px;
+	border:.25em gray;
+}
+
+.view_area {
+	position: absolute;
+	bottom: 5%;
+	left: 3%;
+	width: 95%;
+	height: 73%;	
+}
+
+.print, .collage, .frame {
+	display: inline-block;
+}
+
+.print {
+	width: 500px;
+	height: 323px;
+}
+
+.frame {
+	margin-left: 15%;
+	display: block;
+}
+
+.collage {
+	margin-top: 35px;
+	width: 400px;
+	height: 315px;
+}
+
+.collage_preview {
+	width: 400px;
+	height: 315px;
+	background-position: center 23%;
+	background-repeat: no-repeat;	
+}
+
+.print_preview {
+	width: 500px;
+	height: 323px;
+	border: .1em solid gray;
+	background-position: center 33%;
+	background-repeat: no-repeat;		
+}
+
+.frame_preview {
+	width: 400px;
+	height: 334px;
+	border: .1em solid gray;
+	background-position: center 33%;
+	background-repeat: no-repeat;	
+}
+
+.availability, .description, .collage_availability {
+	font-family: Helvetica, sans-serif;
+	color: gray;
+	font-size: .8em;
+	background-position: center top;
+	background-color: white;
+	text-align: right;
+	padding-right: 3px;
+	padding-top: 2px;
+}
+
+.description {
+	width: 400px;
+}
