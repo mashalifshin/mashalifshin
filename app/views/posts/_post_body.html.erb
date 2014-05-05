@@ -1,7 +1,7 @@
 <div class="body">
 	<%= render  :partial => 'shared/captioned_image',
 				:locals => {:the_image => post.post_images.ordered.first } unless post.post_images.empty? %>
-	<%= simple_format post.body %>
+	<%= simple_format raw post.body %>
 	<% post.post_images.ordered.drop(1).each do |post_image| %>
 		<%= render :partial => "shared/captioned_image", :locals => { :the_image => post_image } %>
 	<% end %>
