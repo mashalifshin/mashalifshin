@@ -1,0 +1,88 @@
+div.text {
+	font-family: helvetica, sans-serif; 
+	font-size:1.5em; 
+	color:gray; 
+}
+
+div.caption_text {
+	font-family: helvetica, sans-serif; 
+	font-size:1.1em; 
+	color:gray; 
+}
+
+div.vid {
+	width: 300px; 
+	height: 300px; 
+	margin-left:auto; 
+	margin-right:auto; 
+	display:inline-block;
+}
+
+div#centered {
+	width:910px; 
+	margin-right:auto; 
+	margin-left:auto;
+}
+
+div#map_canvas {
+	width: 995px; 
+	height: 600px; 
+	margin-left:auto; 
+	margin-right:auto;
+}
+
+div#test_site_link {
+	padding-top: 20px;
+	width: 230px;
+}
+
+div#documentation_link {
+	width: 450px;
+}
+
+div#symposium {
+	margin-left: auto;
+	margin-right: auto;
+	width: 990;
+}
+
+div#amboy {
+	display: inline-block;
+	width: 425px;
+}
+
+div#joshua_tree {
+	display: inline-block;
+	width: 560px;
+	padding-top: 4px;
+}
+
+div#ironage {
+	width: 855px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div#rockets {
+	width: 425px;
+	margin-right: auto;
+	margin-left: auto;	
+}
+
+a, a:link { 
+	font-family: helvetica, sans-serif; 
+	text-align:center; 
+	margin-top:30px; 
+	margin-left:auto; 
+	margin-right:auto;
+	color:gray; 
+	}
+a:visited {
+	color: gray;
+}
+a:hover {
+	color: Orange;
+}
+a:active {
+	color: Yellow;
+}

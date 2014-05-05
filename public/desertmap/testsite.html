@@ -1,0 +1,113 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" author="Masha Lifshin copyleft 2009"/>
+    <title>test site :: mapping the desert : deserting the map</title>
+	<script
+	src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAeyJLqowA5XdpqVD-QIY0KhQgdH1M6247cmsfwcCikgcmm-MInRSCx6RYvVURx0iRQqzscElTdyi13Q" type="text/javascript">	
+	</script>
+	
+	<script type="text/javascript">
+	/* 
+		Geolocations represented as latitude longitude pairs.  The 
+		code will select one of these at random to target.
+	*/
+	var test_sites = new Array(new GLatLng(11.5593398, 165.3878525),	// Bikini Atoll, Marshall Islands
+							   new GLatLng(11.4653625,162.1890000),		// Enewetak Atoll, Marshall Islands
+							   new GLatLng(11.6666667,162.1869444),		// Elugelab, Marshall Islands
+							   new GLatLng(16.7322716,-169.5308371),	// Johnston Atoll						
+							   new GLatLng(37.1166667,-116.0500000),	// Nevada Proving Ground
+							   new GLatLng(40.1268950,-113.4180560),	// Dugway Proving Ground
+							   new GLatLng(33.1478970,-114.4243710),	// Yuma Proving Ground
+							   new GLatLng(32.3860690,-106.4781010),	// White Sands Test Facility
+							   new GLatLng(35.6877290,-117.6906200),	// Naval Air Weapons Station China Lake, CA
+							   new GLatLng(38.7358933,-85.3799577),		// Jefferson Proving Grounds, Madison, Indiana
+							   new GLatLng(34.1707612,-115.7379719));   // test site: Ironage Rd, Twentynine Palms, San Bernadino, CA
+	
+	/*
+		Google maps supports up to zoom level 20 for some areas, 
+		but many regions do not have tiles for such close views, so
+		17 is a safe bet for most places.  
+	*/
+	var MAXIMUM_REASONABLE_ZOOM = 17;
+	
+	/*
+		Set up the map in the browser window and begin zooming.
+	*/						
+    function initialize() {
+    	if (GBrowserIsCompatible()) {
+        	// Set up the map
+			var map = new GMap2(document.getElementById("map_canvas"), { backgroundColor:"white" });
+	        map.setCenter(getRandomLatLong(), 0);
+		map.setMapType(G_SATELLITE_MAP);			
+			// Disable various UI controls, such  as dragging, scale control, scroll wheel, double clicking,
+			// keyboard, largemapcontrol3d (uhhh ... just go with it). 
+			map.disableDragging()
+
+			var customUI = map.getDefaultUI();
+			customUI.controls.scalecontrol = false;
+			customUI.zoom.scrollwheel = false;	
+			customUI.zoom.doubleclick = false;
+			customUI.controls.keyboard = false;
+			customUI.controls.largemapcontrol3d = false;
+			map.setUI(customUI); 
+		
+			// ZOOM!
+			rocketZoom(map);     
+		}
+    }
+
+	/*
+	 	At the begining of the zoom, we pan to the location and repeatedly zoom.
+	*/
+	function rocketZoom(map) {
+		//pan to random test site location and 0 zoom
+		var site_lat_long = getRandomLatLong();
+		map.panTo(site_lat_long);
+		map.setZoom(0);
+
+		zoom(map, site_lat_long);
+	}
+
+	/*
+		Zoom in one level.  If we haven't reached zoom level 17 yet
+		(maximum reasonable zoom), then repeat this same operation
+		again in 1000 milliseconds (1 second).  Otherwise, start 
+		from the beginning with rocketZoom, by panning to newly-
+		selected random location.
+	*/
+	function zoom(map, site_lat_long) {
+		map.zoomIn(site_lat_long, true, true);
+		var z = map.getZoom();
+		if(map.getZoom() < MAXIMUM_REASONABLE_ZOOM) {
+			var t = setTimeout(function() {zoom(map, site_lat_long);}, 1500);
+		} else {
+			rocketZoom(map);
+		}
+	}
+
+	/*
+		Utility function to retreive a random location as a GLatLng
+		object.
+	*/
+	function getRandomLatLong() {
+		var index = Math.floor(Math.random()*(test_sites.length));
+		var site_lat_long = test_sites[index];
+		return site_lat_long
+	}
+    </script>
+
+	<!-- Separate file where the visual appearance, including colors, fonts, 
+		and element positioning, are defined. -->
+	<link rel="stylesheet" type="text/css" href="/desertmap/dsrt.css" />
+	
+  </head>
+  <body onload="initialize()" onunload="GUnload()">
+	
+	<div class="text" style="width:450px; padding: 0; margin:0;">test site :: return to <a href="/desertmap">desert map main page</a></div>
+	
+    <div id="map_canvas"></div>
+  
+</body>
+</html>
