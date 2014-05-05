@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+  <head> 
+  
+    <script type="text/javascript" src="owl.js"></script>
+    <link rel="stylesheet" type="text/css" href="owl.css" />
+
+  </head>
+
+  <body onload="owlTiles()">
+  
+    <div id="owlContainer">
+    </div>
+  
+    <div id="loadingArea">
+      Loading ...
+    </div>
+
+  </body>
+
+</html>
