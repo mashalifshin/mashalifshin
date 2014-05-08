@@ -10,7 +10,7 @@
 		</div>
 		<div class="tags">
 			<% post.tags.each do |tag| %>
-				<span class="tag"><%= link_to tag.name, tagged_posts_url(:tag => tag.name) %></span>
+				<span class="tag"><%= link_to tag.name, tagged_posts_url(:tag => get_anchor_name(tag.name)) %></span>
 			<% end %>
 		</div>
 	</div>

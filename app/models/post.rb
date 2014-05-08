@@ -30,7 +30,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.find_by_param input
-      find_by_title input.gsub '_', ' '
+    find_by_title input.gsub '_', ' '
   end
 
 end
