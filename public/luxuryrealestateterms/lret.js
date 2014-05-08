@@ -11,7 +11,7 @@ function random(upper, lower) {
 function preloader(n, folder, images) {
     for (j=1;j<=n;j++) {
         images[j-1] = new Image();
-        images[j-1].src = folder + "/" + j + ".jpg";
+        images[j-1].src = "luxuryrealestateterms/" + folder + "/" + j + ".jpg";
     }
 }
 
@@ -22,7 +22,7 @@ function changeTerm(id, folder) {
     } else {
       imageId = random(1, num_nouns);
     }
-    var imageSrc = folder + "/" + imageId + ".jpg"; 
+    var imageSrc = "luxuryrealestateterms/" + folder + "/" + imageId + ".jpg";
     document.getElementById(id).style.backgroundImage = "url(" + imageSrc + ")";
 }
 
