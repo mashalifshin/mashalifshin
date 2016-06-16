@@ -87,10 +87,10 @@ a:active{
 
 .post .body {
 	float: right;
-	width: 40%;
 	margin-right: 15%;
 	font-family: Courier;
 	font-size: .8em;
+	margin-top: 40px;
 }
 
 .post .body p {
