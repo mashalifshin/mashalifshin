@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 
@@ -40,7 +40,7 @@ group :production do
 end
 
 group :development do
-  gem 'debugger'
+  # gem 'debugger'
 end
 
 # To use ActiveModel has_secure_password
@@ -54,6 +54,3 @@ end
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
