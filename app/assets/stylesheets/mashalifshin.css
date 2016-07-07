@@ -2,6 +2,15 @@ body {
 	font-family: 'Courier', sans-serif;
 }
 
+@media only screen and (max-width: 500px) {
+	body { font-size: 100%; }
+	.post .body p { max-width: 50em; }
+}
+
+@media only screen and (max-width: 1100px) {
+	body { font-size: 120%; }
+}
+
 a {
 	text-decoration: none;
 	background-color: rgb(255,222,255);
@@ -87,7 +96,7 @@ a:active{
 	margin-left: 5%;
 	font-family: Courier;
 	font-size: 1.5vw;
-	line-height: 2vw;
+	line-height: 3vw;
 	margin-top: 5em;
 }
 
@@ -95,13 +104,7 @@ a:active{
 	letter-spacing: .1em;
 	margin-top: .5em;
 	color: #555;
-	max-width: 35em;
-}
-
-@media all and (max-width: 35em) {
-    .post .body p {
-		max-width: 90%;
-    }
+	max-width: 90%;
 }
 
 .captioned_image {
@@ -139,7 +142,7 @@ a:active{
 #about p {
 	letter-spacing: .1em;
 	margin-top: .5em;
-	line-height: 1.5em;
+	line-height: 3vw;
 	color: #555;
 }
 
