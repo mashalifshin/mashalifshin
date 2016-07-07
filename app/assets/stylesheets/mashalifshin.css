@@ -46,16 +46,13 @@ a:active{
 
 .post .title {
 	color: #333;
-	float: right;
-	width: 40%;
-	margin-right: 15%;
-	font-size: 1.3em;
+	font-size: 2em;
 	margin-bottom: .5em;
+	margin-left: 5%;
 }
 
 .post .metadata {
-	width: 40%;
-	float: right;
+	margin-left: 5%;
 }
 
 .post .timestamp {
@@ -89,7 +86,7 @@ a:active{
 	margin-left: 5%;
 	font-family: Courier;
 	font-size: .8em;
-	margin-top: 40px;
+	margin-top: 5em;
 }
 
 .post .body p {
@@ -97,6 +94,7 @@ a:active{
 	margin-top: .5em;
 	line-height: 1.5em;
 	color: #555;
+	max-width: 35em;
 }
 
 .captioned_image {
