@@ -53,12 +53,12 @@ Mashalifshin::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   config.action_controller.asset_host = ->(source, request = nil, *_){
-2   if request && request.ssl?
-3     ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN'].sub(/http:/, "https:")
-4   else
-5     ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN']
-6   end
-7 }
+    if request && request.ssl?
+      ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN'].sub(/http:/, "https:")
+    else
+      ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN']
+    end
+  }
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
