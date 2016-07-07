@@ -86,8 +86,7 @@ a:active{
 }
 
 .post .body {
-	float: right;
-	margin-right: 15%;
+	margin-left: 5%;
 	font-family: Courier;
 	font-size: .8em;
 	margin-top: 40px;
