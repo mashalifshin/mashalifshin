@@ -97,6 +97,12 @@ a:active{
 	max-width: 35em;
 }
 
+@media all and (max-width: 50em) {
+    .post .body p {
+		max-width: 90%;
+    }
+}
+
 .captioned_image {
 	margin-bottom: 1em;
 }
