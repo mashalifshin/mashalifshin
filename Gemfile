@@ -33,6 +33,7 @@ gem 'mini_magick'
 gem 'asset_sync'
 
 gem 'kaminari'
+gem 'rails_12factor'
 
 group :production do
   gem 'puma'
