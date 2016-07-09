@@ -30,6 +30,7 @@ gem 'rails_admin'
 gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'asset_sync'
 
 gem 'kaminari'
 gem 'rails_12factor'
