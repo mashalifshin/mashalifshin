@@ -17,8 +17,8 @@ Mashalifshin::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  # Enable this for Cloudfront CDN
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -52,7 +52,13 @@ Mashalifshin::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = ->(source, request = nil, *_){
+    if request && request.ssl?
+      ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN'].sub(/http:/, "https:")
+    else
+      ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN']
+    end
+  }
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
