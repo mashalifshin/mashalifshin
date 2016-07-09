@@ -19,6 +19,7 @@ Mashalifshin::Application.configure do
 
   # Enable this for Cloudfront CDN
   config.serve_static_assets = true
+  config.static_cache_control = 'public, max-age=31536000'
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
