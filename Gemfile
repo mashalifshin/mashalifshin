@@ -33,6 +33,7 @@ gem 'mini_magick'
 
 gem 'kaminari'
 gem 'rails_12factor'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :production do
   gem 'puma'

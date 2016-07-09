@@ -15,6 +15,9 @@ Mashalifshin::Application.routes.draw do
 
   root :to => 'posts#index'
 
+  match '*path', via: :all, to: 'errors#not_found',
+    constraints: CloudfrontConstraint.new
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
