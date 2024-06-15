@@ -27,7 +27,6 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'rails_admin'
 
-gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
 
