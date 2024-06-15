@@ -1,5 +1,5 @@
 <div class="captioned_image">
-	<%= image_tag(the_image.image.regular, :alt => the_image.name) %>
+	<%= image_tag(the_image.image.regular.url, :alt => the_image.name) %>
 	<div class="image_caption">
 		<span class="name"><%= the_image.name %></span><%= ".  " unless the_image.name.blank? %>
 		<span class="author"><%= the_image.author %></span><%= ".  " unless the_image.author.blank? %>
