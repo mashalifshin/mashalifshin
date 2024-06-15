@@ -11,13 +11,13 @@ class MashaLifshinUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage :fog
 
   # Use temp for cache directory on heroku
   def cache_dir
     "#{Rails.root}/tmp/uploads"
   end
-
+  
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -50,7 +50,7 @@ class MashaLifshinUploader < CarrierWave::Uploader::Base
     if original_filename
       @hash ||= Digest::MD5.hexdigest(File.dirname(current_path))
       "#{file.basename.split('_').last}-#{@hash}.#{file.extension}"
-    end
+    end  
   end
 
 end
