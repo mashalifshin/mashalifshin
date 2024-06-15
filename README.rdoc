@@ -1,1 +1,3 @@
-Ma Wabsite.
+My website.
+
+A Rails 6.1.0 (née Rails 3) app that supports a chronological feed of posts with images, tagging, comments, and a CRUD admin panel.
