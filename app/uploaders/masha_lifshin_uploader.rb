@@ -13,15 +13,15 @@ class MashaLifshinUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   storage :fog
 
-  # Use temp for cache directory on heroku
+  # Use tmp for cache directory
   def cache_dir
-    "#{Rails.root}/tmp/uploads"
+    "/tmp/uploads"
   end
-  
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -49,8 +49,8 @@ class MashaLifshinUploader < CarrierWave::Uploader::Base
   def filename
     if original_filename
       @hash ||= Digest::MD5.hexdigest(File.dirname(current_path))
-      "#{file.basename.split('_').last}-#{@hash}.#{file.extension}"
-    end  
+      "#{file.filename.split('_').last}-#{@hash}.#{file.extension}"
+    end
   end
 
 end

@@ -1,4 +1,4 @@
-class CreatePostsTagsJoinTable < ActiveRecord::Migration
+class CreatePostsTagsJoinTable < ActiveRecord::Migration[4.2]
   def change
     create_table :posts_tags, :id => false do |t|
       t.integer :post_id

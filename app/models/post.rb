@@ -1,9 +1,7 @@
 class Post < ActiveRecord::Base
   has_many :comments
-  has_many :post_images, :order => 'image_order ASC'
+  has_many :post_images
   has_and_belongs_to_many :tags
-
-  attr_accessible :body, :title, :date, :live, :comment_ids, :comments_attributes, :post_image_ids, :post_images_attributes, :tag_ids
 
   accepts_nested_attributes_for :post_images, :allow_destroy => true
   accepts_nested_attributes_for :comments, :allow_destroy => true
@@ -11,7 +9,7 @@ class Post < ActiveRecord::Base
   validates :title, :uniqueness => true
   validates :title, :body, :presence => true
 
-  scope :chronological, :order => "created_at DESC", :conditions => 'live IS TRUE'
+  scope :chronological, -> { where(live: true).order(created_at: :desc) }
 
   paginates_per 5
 

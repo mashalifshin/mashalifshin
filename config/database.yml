@@ -2,8 +2,8 @@ development: &dev
   adapter: postgresql
   encoding: unicode
   database: mashalifshin_development
-  username: mashalifshin
-  password: mixturemaxture
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   pool: 10
 
 # Warning: The database defined as "test" will be erased and

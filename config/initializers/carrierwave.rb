@@ -1,16 +1,16 @@
 CarrierWave.configure do |config|
-  config.root             = Rails.root.join('tmp')
-  config.cache_dir        = 'uploads'
+  config.storage = :fog
 
-  config.storage          =  :fog
-  config.fog_credentials  = {
-    :provider                   => "AWS",
-    :aws_access_key_id          => ENV['AWS_ACCESS_KEY_ID'],
-    :aws_secret_access_key      => ENV['AWS_SECRET_ACCESS_KEY'],
+  config.fog_credentials = {
+      provider: 'AWS', # required
+      aws_access_key_id: ENV['DO_SPACE_ACCESS_KEY'], # required
+      aws_secret_access_key: ENV['DO_SPACE_SECRET_KEY'], # required
+      region: 'sfo2', # required
+      endpoint: 'https://sfo2.digitaloceanspaces.com' # required
   }
 
-  config.fog_directory    = ENV['FOG_DIRECTORY']
-  config.fog_public       = true
-  config.asset_host       = ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN']
-  config.fog_attributes   = {'Cache-Control'=>'max-age=315576000'}
+  config.fog_directory = 'mashalifshin' # required
+  # config.fog_public = false # optional, defaults to true
+  config.asset_host = "https://#{config.fog_directory}.sfo2.digitaloceanspaces.com"
+  config.fog_attributes = { 'Cache-Control' => 'max-age=315576000' } # optional, defaults to {}
 end
