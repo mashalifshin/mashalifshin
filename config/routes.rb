@@ -5,7 +5,7 @@ Mashalifshin::Application.routes.draw do
 
   resources :about, :only => [:index]
 
-  resources :posts, :only => [:index, :show, :feed] do
+  resources :posts, :only => [:index, :feed] do
     get 'feed', :action => :feed, :on => :collection, :as => 'feed', :defaults => { :format => 'atom' }
     get ':tag', :action => :index, :on => :collection, :as => 'tagged'
     get '(:tag)/page/:page', :action => :index, :on => :collection
