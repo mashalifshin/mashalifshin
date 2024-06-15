@@ -18,8 +18,10 @@ Mashalifshin::Application.configure do
   config.action_controller.perform_caching = true
 
   # Enable this for Cloudfront CDN
-  config.serve_static_assets = true
-  config.static_cache_control = 'public, max-age=31536000'
+  config.public_file_server.enabled = true
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=31536000'
+  }
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -77,7 +79,5 @@ Mashalifshin::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  # Log the query plan for queries taking more than this (works
-  # with SQLite, MySQL, and PostgreSQL)
-  # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.eager_load = true
 end
