@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   validates :title, :uniqueness => true
   validates :title, :body, :presence => true
 
-  scope :chronological, -> { order(created_at: :desc).where(live: true) }
+  scope :chronological, -> { where(live: true).order(created_at: :desc) }
 
   paginates_per 5
 
