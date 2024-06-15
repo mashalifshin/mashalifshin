@@ -1,4 +1,4 @@
-class DropWorksTable < ActiveRecord::Migration
+class DropWorksTable < ActiveRecord::Migration[4.2]
   def up
     drop_table :works
   end
