@@ -12,12 +12,11 @@ services:
     name: mashalifshin
     runtime: ruby
     numInstances: 3 # Manual scaling configuration. Default: 1 for new services
-    plan: free # Default: starter
     branch: main # Default: master
     buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: bundle exec rails server
-    # maxShutdownDelaySeconds: 120 # Increase graceful shutdown period. Default: 30, Max: 300
+    maxShutdownDelaySeconds: 120 # Increase graceful shutdown period. Default: 30, Max: 300
     envVars:
       - key: DATABASE_URL
         fromDatabase:
