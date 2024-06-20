@@ -83,3 +83,4 @@ pickle-email-*.html
 
 # Local environment
 local_env.yml
+/config/master.key
