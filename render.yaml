@@ -1,9 +1,8 @@
 databases:
-  # A database with a read replica
   - name: mashalifshin
-    databaseName: mashalifshin_production # Optional
-    user: mashalifshin # Optional
-    ipAllowList: # Optional (defaults to allow all)
+    databaseName: mashalifshin_production
+    user: mashalifshin
+    ipAllowList:
       - source: 23.93.74.28
         description: home office
 
@@ -11,12 +10,12 @@ services:
   - type: web
     name: mashalifshin
     runtime: ruby
-    numInstances: 3 # Manual scaling configuration. Default: 1 for new services
-    branch: main # Default: master
+    numInstances: 3
+    branch: main
     buildCommand: "./bin/render-build.sh"
-    preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    # preDeployCommand: "bundle exec rails db:migrate"
     startCommand: bundle exec rails server
-    maxShutdownDelaySeconds: 120 # Increase graceful shutdown period. Default: 30, Max: 300
+    maxShutdownDelaySeconds: 120
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -25,4 +24,4 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
-        value: 2 # sensible default
+        value: 2
