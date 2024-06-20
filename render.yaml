@@ -1,17 +1,23 @@
 databases:
+  # A database with a read replica
   - name: mashalifshin
-    databaseName: mashalifshin_production
-    user: DATABASE_USERNAME
-    plan: free
+    databaseName: mashalifshin_production # Optional
+    user: mashalifshin # Optional
+    ipAllowList: # Optional (defaults to allow all)
+      - source: 23.93.74.28
+        description: home office
 
 services:
   - type: web
     name: mashalifshin
     runtime: ruby
-    plan: free
+    numInstances: 3 # Manual scaling configuration. Default: 1 for new services
+    plan: free # Default: starter
+    branch: main # Default: master
     buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
-    startCommand: "bundle exec rails server"
+    startCommand: bundle exec rails server
+    # maxShutdownDelaySeconds: 120 # Increase graceful shutdown period. Default: 30, Max: 300
     envVars:
       - key: DATABASE_URL
         fromDatabase:
