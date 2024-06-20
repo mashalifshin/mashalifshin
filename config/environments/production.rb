@@ -9,7 +9,7 @@ Mashalifshin::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
-  
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -57,9 +57,9 @@ Mashalifshin::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   config.action_controller.asset_host = ->(source, request = nil, *_){
     if request && request.ssl?
-      ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN'].sub(/http:/, "https:")
+      ENV['DO_SPACE_CDN_DOMAIN'].sub(/http:/, "https:")
     else
-      ENV['CLOUDFRONT_DISTRIBUTION_DOMAIN']
+      ENV['DO_SPACE_CDN_DOMAIN']
     end
   }
 
