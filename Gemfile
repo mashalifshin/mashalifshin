@@ -54,4 +54,4 @@ end
 
 # Deploy with Capistrano
 # gem 'capistrano'
-gem "sassc-rails"
+gem 'sassc-rails'
