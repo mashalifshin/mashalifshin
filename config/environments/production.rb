@@ -32,6 +32,9 @@ Mashalifshin::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Prefix for bucket subfolder
+  config.assets.prefix = "/assets"
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
@@ -55,13 +58,7 @@ Mashalifshin::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = ->(source, request = nil, *_){
-    if request && request.ssl?
-      ENV['DO_SPACE_CDN_DOMAIN'].sub(/http:/, "https:")
-    else
-      ENV['DO_SPACE_CDN_DOMAIN']
-    end
-  }
+  config.asset_host = ENV['DO_SPACE_CDN_DOMAIN']
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
