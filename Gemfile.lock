@@ -81,11 +81,6 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    asset_sync (2.19.1)
-      activemodel (>= 4.1.0)
-      fog-core
-      mime-types (>= 2.99)
-      unf
     base64 (0.2.0)
     bcrypt (3.1.17)
     bigdecimal (3.1.8)
@@ -293,9 +288,6 @@ GEM
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.9.1)
     warden (1.2.9)
       rack (>= 2.0.9)
     webrick (1.8.1)
@@ -308,7 +300,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  asset_sync
   carrierwave
   coffee-rails
   devise

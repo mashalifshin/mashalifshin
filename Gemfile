@@ -26,7 +26,6 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'rails_admin'
 
-gem 'asset_sync'
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
@@ -55,4 +54,4 @@ end
 
 # Deploy with Capistrano
 # gem 'capistrano'
-gem "sassc-rails"
+gem 'sassc-rails'

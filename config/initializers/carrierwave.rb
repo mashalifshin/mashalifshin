@@ -9,7 +9,7 @@ CarrierWave.configure do |config|
       endpoint: 'https://sfo2.digitaloceanspaces.com' # required
   }
 
-  config.fog_directory = ENV['FOG_DIRECTORY'] # required
+  config.fog_directory = ENV['DO_SPACE_DIRECTORY'] # required
   # config.fog_public = false # optional, defaults to true
   config.asset_host = ENV['DO_SPACE_CDN_DOMAIN']
   config.fog_attributes = { 'Cache-Control' => 'max-age=315576000' } # optional, defaults to {}
