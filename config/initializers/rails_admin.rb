@@ -2,10 +2,15 @@
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
-  config.asset_source = :sprockets
-
 
   ################  Global configuration  ################
+
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
+
+  config.asset_source = :sprockets
 
   # Set the admin name here (optional second array element will appear in red). For example:
   config.main_app_name = ['Mashalifshin', 'Admin']
@@ -13,7 +18,7 @@ RailsAdmin.config do |config|
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
   # RailsAdmin may need a way to know who the current user is]
-  config.current_user_method { current_user } # auto-generated
+  # config.current_user_method { current_user } # auto-generated
 
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
@@ -65,13 +70,13 @@ RailsAdmin.config do |config|
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :post_id, :integer 
-  #     configure :name, :string 
-  #     configure :body, :text 
-  #     configure :approved, :boolean 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :post_id, :integer
+  #     configure :name, :string
+  #     configure :body, :text
+  #     configure :approved, :boolean
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -111,11 +116,11 @@ RailsAdmin.config do |config|
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :resume, :string 
-  #     configure :about, :text 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :resume, :string
+  #     configure :about, :text
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -155,12 +160,12 @@ RailsAdmin.config do |config|
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :title, :string 
-  #     configure :date, :datetime 
-  #     configure :body, :text 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :title, :string
+  #     configure :date, :datetime
+  #     configure :body, :text
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -200,14 +205,14 @@ RailsAdmin.config do |config|
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :title, :string 
-  #     configure :description, :text 
-  #     configure :date, :date 
-  #     configure :live, :boolean 
-  #     configure :image, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :title, :string
+  #     configure :description, :text
+  #     configure :date, :date
+  #     configure :live, :boolean
+  #     configure :image, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
