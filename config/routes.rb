@@ -11,12 +11,11 @@ Mashalifshin::Application.routes.draw do
     get '(:tag)/page/:page', :action => :index, :on => :collection
     resources :comments, :only => [:create]
   end
+  get '/404' => "errors#not_found", :as => 'not_found'
   get ':title' => "posts#show", :as => 'post'
-
   root :to => 'posts#index'
 
-  match '*path', via: :all, to: 'errors#not_found',
-    constraints: CloudfrontConstraint.new
+  match '*unmatched', to: 'errors#not_found', via: :all
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
