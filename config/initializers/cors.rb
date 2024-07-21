@@ -1,7 +1,7 @@
 # config/initializers/cors.rb
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins 'https://mashalifshin.sfo2.digitaloceanspaces.com'
 
     resource '/assets/*',
       headers: :any,
