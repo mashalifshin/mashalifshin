@@ -18,6 +18,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_param params[:title]
+    if @post.nil?
+      return redirect_to controller: 'errors', action: 'not_found', path: params[:title]
+    end
     @previous_post = @post.previous_chronologically
     @next_post = @post.next_chronologically
 

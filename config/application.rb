@@ -60,6 +60,8 @@ module Mashalifshin
     # Causes the app to not boot if a master key hasn't been made available through ENV["RAILS_MASTER_KEY"] or the config/master.key file.
     config.require_master_key = true
 
+    config.exceptions_app = self.routes
+
     # Load the local environment variables file
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')

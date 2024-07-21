@@ -1,5 +1,6 @@
 class ErrorsController < ApplicationController
   def not_found
-    raise ActiveRecord::RecordNotFound
+    @path = params[:path]
+    render "404"
   end
 end
