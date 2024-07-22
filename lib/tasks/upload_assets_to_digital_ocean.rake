@@ -11,7 +11,7 @@ namespace :assets do
       :region                   => ENV['DO_SPACE_REGION'],
       :aws_access_key_id        => ENV['DO_SPACE_ACCESS_KEY'],
       :aws_secret_access_key    => ENV['DO_SPACE_SECRET_KEY'],
-      :endpoint                 => ENV['DO_SPACE_CDN_URL']
+      :endpoint                 => ENV['DO_SPACE_URL']
     })
 
     do_assets_dir = storage.directories.get('mashalifshin', prefix: 'assets')
