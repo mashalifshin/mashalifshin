@@ -15,7 +15,7 @@ class MashaLifshinUploader < CarrierWave::Uploader::Base
 
   # Use tmp for cache directory
   def cache_dir
-    "/tmp/uploads"
+    "tmp/uploads"
   end
 
   # Override the directory where uploaded files will be stored.
