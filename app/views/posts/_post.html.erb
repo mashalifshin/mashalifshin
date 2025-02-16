@@ -9,7 +9,7 @@
 			<%= l post.created_at.in_time_zone("Pacific Time (US & Canada)"), :format => :blog_post %>
 		</div>
 		<div class="tags">
-			<% post.tags.each do |tag| %>
+			<% post.tags.sort_by{ |t| t.name }.each do |tag| %>
 				<span class="tag"><%= link_to tag.name, tagged_posts_url(:tag => get_anchor_name(tag.name)) %></span>
 			<% end %>
 		</div>

@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.4.2'
 
-gem 'rails', '7.1.3.4'
+gem 'rails', '7.2.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -25,6 +25,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'rails_admin'
+gem 'csv'
 
 gem 'fog-aws'
 gem 'carrierwave'
