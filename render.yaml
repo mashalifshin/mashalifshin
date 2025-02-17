@@ -2,9 +2,6 @@ databases:
   - name: mashalifshin
     databaseName: mashalifshin_production
     user: mashalifshin
-    ipAllowList:
-      - source: 23.93.74.28
-        description: home office
 
 services:
   - type: web
